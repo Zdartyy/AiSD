@@ -1,0 +1,26 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 15.10.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik zadanie2.3.cpp :
+Program implementuje algorytm sortowania bąbelkowego jako szablon funkcji,
+który sortuje elementy w zakresie określonym przez iteratory. Program 
+sortuje wektor liczb zmiennoprzecinkowych (vector<double>) i wyświetla posortowaną tablicę.
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./zadanie2.3
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================

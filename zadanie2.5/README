@@ -1,0 +1,26 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 15.10.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik zadanie2.5.cpp :
+Ten program implementuje algorytm sortowania przez scalanie jako szablon 
+funkcji, który sortuje elementy w zakresie określonym przez iteratory. 
+Program sortuje wektor liczb całkowitych (vector<int>) i wyświetla posortowaną tablicę.
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./zadanie2.5
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================
