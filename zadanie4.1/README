@@ -1,0 +1,27 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 29.10.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik main.cpp :
+Ten program testuje działanie klasy SingleList, która implementuje listę
+jednokierunkową. Sprawdza operacje dodawania, usuwania, odwracania i 
+czyszczenia elementów listy za pomocą funkcji assert.
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================
