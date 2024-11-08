@@ -39,7 +39,7 @@ public:
     {
         assert(!empty());
         return tail->value;
-    } // zwraca koniec, nie usuwa
+    }                     // zwraca koniec, nie usuwa
     void pop_front();     // usuwa poczatek O(1)
     void pop_back();      // usuwa koniec O(n)
     void clear();         // czyszczenie listy z elementow O(n)
@@ -54,6 +54,33 @@ SingleList<T>::~SingleList()
     {
         pop_front();
     }
+}
+
+template <typename T>
+SingleList<T>::SingleList(const SingleList &other) : head(nullptr), tail(nullptr)
+{
+    SingleNode<T> *node = other.head;
+    while (node != nullptr)
+    {
+        push_back(node->value);
+        node = node->next;
+    }
+}
+
+template <typename T>
+SingleList<T> &SingleList<T>::operator=(const SingleList &other)
+{
+    if (this != &other)
+    {
+        clear();
+        SingleNode<T> *node = other.head;
+        while (node != nullptr)
+        {
+            push_back(node->value);
+            node = node->next;
+        }
+    }
+    return *this;
 }
 
 template <typename T>
