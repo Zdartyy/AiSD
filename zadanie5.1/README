@@ -1,0 +1,25 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 08.10.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik main.cpp :
+Program testuje różne funkcje klasy DoubleList, takie jak dodawanie i usuwanie elementów z przodu i z tyłu listy, czyszczenie listy, wyświetlanie listy w obu kierunkach, oraz kopiowanie listy za pomocą konstruktora kopiującego i operatora przypisania.
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================
