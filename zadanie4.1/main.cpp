@@ -75,6 +75,33 @@ void test_reverse()
     std::cout << "test_reverse passed" << std::endl;
 }
 
+void test_copy_constructor()
+{
+    SingleList<int> list;
+    list.push_back(5);
+    list.push_back(2);
+    list.push_back(3);
+    SingleList<int> copy(list);
+    assert(copy.size() == 3);
+    assert(copy.front() == 5);
+    assert(copy.back() == 3);
+    std::cout << "test_copy_constructor passed" << std::endl;
+}
+
+void test_assignment_operator()
+{
+    SingleList<int> list;
+    list.push_back(1);
+    list.push_back(10);
+    list.push_back(20);
+    SingleList<int> copy;
+    copy = list;
+    assert(copy.size() == 3);
+    assert(copy.front() == 1);
+    assert(copy.back() == 20);
+    std::cout << "test_assignment_operator passed" << std::endl;
+}
+
 int main()
 {
     test_push_back();
@@ -83,6 +110,8 @@ int main()
     test_pop_front();
     test_clear();
     test_reverse();
+    test_copy_constructor();
+    test_assignment_operator();
 
     std::cout << "All tests passed!" << std::endl;
     return 0;
