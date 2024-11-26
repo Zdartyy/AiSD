@@ -1,0 +1,32 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 25.11.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik main.cpp :
+Ten program testuje różne funkcje klasy ArrayStack. Zawiera pięć funkcji 
+testowych:
+test_push() - sprawdza dodawanie elementów na stos.
+test_pop() - sprawdza usuwanie elementów ze stosu.
+test_top() - sprawdza dostęp do elementu na szczycie stosu.
+test_empty() - sprawdza, czy stos jest pusty.
+test_full() - sprawdza, czy stos jest pełny.
+
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================

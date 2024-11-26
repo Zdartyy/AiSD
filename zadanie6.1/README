@@ -1,0 +1,28 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 22.11.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik main.cpp :
+Ten program tworzy obiekt Deque o rozmiarze 5 i wykonuje na nim kilka operacji.
+Najpierw dodaje elementy na początek i koniec kolejki, a następnie wyświetla 
+pierwszy i ostatni element. Następnie usuwa elementy z początku i końca 
+kolejki i ponownie wyświetla pierwszy i ostatni element.
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================
