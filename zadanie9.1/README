@@ -1,0 +1,28 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 17.12.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik mypriorityqueue.h definiuje klasę MyPriorityQueue, która implementuje
+kolejkę priorytetową na bazie std::vector i kopca z STL. Klasa ta zawiera 
+metody do dodawania elementów (push), usuwania największego elementu (pop),
+sprawdzania, czy kolejka jest pusta (empty), oraz wyświetlania zawartości 
+kolejki (display).
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================

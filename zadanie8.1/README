@@ -1,0 +1,28 @@
+========================================================================
+Autor: Artur Tabor,                                  Krakow, 16.12.2024
+========================================================================
+
+* Zawartosc:
+============
+Plik myqueue.h definiuje klasę MyQueue, która implementuje kolejkę na bazie
+tablicy cyklicznej. Klasa ta zawiera metody do dodawania elementów na koniec
+kolejki (push), usuwania elementów z początku kolejki (pop), sprawdzania, czy
+kolejka jest pusta (empty), sprawdzania, czy kolejka jest pełna (full), oraz
+wyświetlania zawartości kolejki (display).
+
+* Jak uruchomic program:
+=========================
+
+Katalog zawiera program Makefile do kompilacji powyzszego programu, a takze
+czyszczenia katalogu.
+
+-> Aby skompilować program, nalezy wykonac komende:
+       make
+
+-> Aby uruchomic program, nalezy wykonac komende:
+       ./main.exe
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+========================================================================
