@@ -4,7 +4,6 @@ Autor: Artur Tabor,                                  Krakow, 22.11.2024
 
 * Zawartosc:
 ============
-POPRAWIONE CHYBA 
 Plik main.cpp :
 Ten program tworzy obiekt Deque o rozmiarze 5 i wykonuje na nim kilka operacji.
 Najpierw dodaje elementy na początek i koniec kolejki, a następnie wyświetla 
