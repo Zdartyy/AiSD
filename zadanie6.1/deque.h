@@ -5,106 +5,128 @@
 #include <cassert>
 
 template <typename T>
-class Deque
+class MyDeque
 {
-private:
-    T *array;
-    int front;
-    int rear;
-    int capacity;
-    int count;
-
+    T *tab;
+    std::size_t msize; // największa możliwa liczba elementów plus jeden
+    std::size_t head;  // pierwszy do pobrania
+    std::size_t tail;  // pierwsza wolna pozycja
 public:
-    Deque(int size);
-    ~Deque();
-
-    void push_front(const T &item);
-    void push_back(const T &item);
-    void pop_front();
-    void pop_back();
-    T &get_front() const;
-    T &get_back() const;
-    bool is_empty() const;
-    bool is_full() const;
-    int size() const;
+    MyDeque(std::size_t s = 10) : msize(s + 1), head(0), tail(0)
+    {
+        tab = new T[s + 1];
+        assert(tab != nullptr);
+    } // default constructor
+    ~MyDeque() { delete[] tab; }
+    MyDeque(const MyDeque &other);            // copy constructor
+    MyDeque &operator=(const MyDeque &other); // copy assignment operator
+    bool empty() const { return head == tail; }
+    bool full() const { return (tail + 1) % msize == head; }
+    std::size_t size() const { return (tail - head + msize) % msize; }
+    std::size_t max_size() const { return msize - 1; }
+    void push_front(const T &item); // dodanie na początek O(1)
+    void push_back(const T &item);  // dodanie na koniec O(1)
+    T &front()
+    {
+        assert(!empty());
+        return tab[head];
+    } // zwraca poczatek
+    T &back()
+    {
+        assert(!empty());
+        return tab[(tail + msize - 1) % msize];
+    } // zwraca koniec
+    void pop_front(); // usuwa początek kolejki O(1)
+    void pop_back();  // usuwa koniec kolejki O(1)
+    void clear();     // czyszczenie listy z elementów
+    void display();
+    void display_reversed();
 };
 
 template <typename T>
-Deque<T>::Deque(int size) : capacity(size + 1), front(0), rear(0), count(0)
+MyDeque<T>::MyDeque(const MyDeque &other) : msize(other.msize), head(other.head), tail(other.tail)
 {
-    array = new T[capacity];
+    tab = new T[msize];
+    assert(tab != nullptr);
+    for (std::size_t i = 0; i < msize; ++i)
+    {
+        tab[i] = other.tab[i];
+    }
 }
 
 template <typename T>
-Deque<T>::~Deque()
+MyDeque<T> &MyDeque<T>::operator=(const MyDeque &other)
 {
-    delete[] array;
+    if (this != &other)
+    {
+        delete[] tab;
+        msize = other.msize;
+        head = other.head;
+        tail = other.tail;
+        tab = new T[msize];
+        assert(tab != nullptr);
+        for (std::size_t i = 0; i < msize; ++i)
+        {
+            tab[i] = other.tab[i];
+        }
+    }
+    return *this;
 }
 
 template <typename T>
-void Deque<T>::push_front(const T &item)
+void MyDeque<T>::push_front(const T &item)
 {
-    assert(!is_full() && "Deque is full");
-    front = (front - 1 + capacity) % capacity;
-    array[front] = item;
-    count++;
+    assert(!full());
+    head = (head + msize - 1) % msize;
+    tab[head] = item;
 }
 
 template <typename T>
-void Deque<T>::push_back(const T &item)
+void MyDeque<T>::push_back(const T &item)
 {
-    assert(!is_full() && "Deque is full");
-    array[rear] = item;
-    rear = (rear + 1) % capacity;
-    count++;
+    assert(!full());
+    tab[tail] = item;
+    tail = (tail + 1) % msize;
 }
 
 template <typename T>
-void Deque<T>::pop_front()
+void MyDeque<T>::pop_front()
 {
-    assert(!is_empty() && "Deque is empty");
-    front = (front + 1) % capacity;
-    count--;
+    assert(!empty());
+    head = (head + 1) % msize;
 }
 
 template <typename T>
-void Deque<T>::pop_back()
+void MyDeque<T>::pop_back()
 {
-    assert(!is_empty() && "Deque is empty");
-    rear = (rear - 1 + capacity) % capacity;
-    count--;
+    assert(!empty());
+    tail = (tail + msize - 1) % msize;
 }
 
 template <typename T>
-T &Deque<T>::get_front() const
+void MyDeque<T>::clear()
 {
-    assert(!is_empty() && "Deque is empty");
-    return array[front];
+    head = tail = 0;
 }
 
 template <typename T>
-T &Deque<T>::get_back() const
+void MyDeque<T>::display()
 {
-    assert(!is_empty() && "Deque is empty");
-    return array[(rear - 1 + capacity) % capacity];
+    for (std::size_t i = head; i != tail; i = (i + 1) % msize)
+    {
+        std::cout << tab[i] << " ";
+    }
+    std::cout << std::endl;
 }
 
 template <typename T>
-bool Deque<T>::is_empty() const
+void MyDeque<T>::display_reversed()
 {
-    return count == 0;
-}
-
-template <typename T>
-bool Deque<T>::is_full() const
-{
-    return count == capacity - 1;
-}
-
-template <typename T>
-int Deque<T>::size() const
-{
-    return count;
+    for (std::size_t i = (tail + msize - 1) % msize; i != (head + msize - 1) % msize; i = (i + msize - 1) % msize)
+    {
+        std::cout << tab[i] << " ";
+    }
+    std::cout << std::endl;
 }
 
 #endif // DEQUE_H
