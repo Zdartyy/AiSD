@@ -4,6 +4,7 @@ Autor: Artur Tabor,                                  Krakow, 25.11.2024
 
 * Zawartosc:
 ============
+CHYBA SKONCZONE
 Plik main.cpp :
 Ten program testuje różne funkcje klasy ArrayStack. Zawiera pięć funkcji 
 testowych:
@@ -12,7 +13,8 @@ test_pop() - sprawdza usuwanie elementów ze stosu.
 test_top() - sprawdza dostęp do elementu na szczycie stosu.
 test_empty() - sprawdza, czy stos jest pusty.
 test_full() - sprawdza, czy stos jest pełny.
-
+test_copy_constructor() - testuje konstruktor kopiujący.
+test_copy_assignment() - testuje operator przypisania kopiującego.
 
 * Jak uruchomic program:
 =========================
