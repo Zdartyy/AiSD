@@ -54,6 +54,33 @@ void test_full()
     std::cout << "test_full passed" << std::endl;
 }
 
+void test_copy_constructor()
+{
+    ArrayStack<int, 5> stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    ArrayStack<int, 5> copied_stack(stack);
+    assert(copied_stack.size() == 3);
+    assert(copied_stack.top() == 3);
+    std::cout << "test_copy_constructor passed" << std::endl;
+}
+
+void test_copy_assignment()
+{
+    ArrayStack<int, 5> stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    ArrayStack<int, 5> assigned_stack;
+    assigned_stack = stack;
+    assert(assigned_stack.size() == 3);
+    assert(assigned_stack.top() == 3);
+    std::cout << "test_copy_assignment passed" << std::endl;
+}
+
 int main()
 {
     test_push();
@@ -61,6 +88,8 @@ int main()
     test_top();
     test_empty();
     test_full();
+    test_copy_constructor();
+    test_copy_assignment();
 
     std::cout << "All tests passed!" << std::endl;
     return 0;
