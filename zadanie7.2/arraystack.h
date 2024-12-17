@@ -14,6 +14,18 @@ class ArrayStack
 public:
     ArrayStack() : top_index(0) {}
 
+    ArrayStack(const ArrayStack &other) : data(other.data), top_index(other.top_index) {}
+
+    ArrayStack &operator=(const ArrayStack &other)
+    {
+        if (this != &other)
+        {
+            data = other.data;
+            top_index = other.top_index;
+        }
+        return *this;
+    }
+
     bool empty() const { return top_index == 0; }
     bool full() const { return top_index == N; }
     std::size_t size() const { return top_index; }
