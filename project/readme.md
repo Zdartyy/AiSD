@@ -2,7 +2,7 @@
 # Quaternion Library in C++
 
 ## Opis
-Ten projekt implementuje klasy i operatory umożliwiające pracę z **kwaternionami** w języku C++. Kwaterniony to rozszerzenie liczb zespolonych, które są powszechnie używane w grafice komputerowej, mechanice obrotowej i innych dziedzinach nauki i techniki. Klasa `Quaternion` zapewnia podstawowe działania arytmetyczne, takie jak dodawanie, odejmowanie, mnożenie, sprzężenie i obliczanie modułu.
+Ten projekt implementuje klase i operatory umożliwiające pracę z **kwaternionami** w języku C++. Kwaterniony to rozszerzenie liczb zespolonych, które są powszechnie używane w grafice komputerowej, mechanice obrotowej i innych dziedzinach nauki i techniki. Klasa `Quaternion` zapewnia podstawowe działania arytmetyczne, takie jak dodawanie, odejmowanie, mnożenie, sprzężenie i obliczanie modułu.
 
 
 ---
